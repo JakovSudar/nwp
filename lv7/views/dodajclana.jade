@@ -1,0 +1,9 @@
+form(action='/addclana',method='post')
+    p 
+    select(placeholder="clan", name="clan")
+        each username in users 
+            option(value="#{username}") #{username}
+    p
+        input(name='naziv',value=naziv, hidden)
+    p
+        input(type='submit',value='Dodaj')

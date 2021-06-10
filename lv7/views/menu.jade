@@ -1,0 +1,10 @@
+if locals.user
+	div#menu
+		span(class=name)
+			=user.name
+		a(href='/post')  Postavi objavu
+		a(href='/logout')  Odjava
+else
+	div#menu
+		a(href='/login')  Prijava
+		a(href='/register')  Registracija

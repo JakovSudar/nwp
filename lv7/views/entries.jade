@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    meta(http-equiv="content-type", content="#{contentType}; charset=UTF-8")
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    include menu
+    if(user)
+      div.container
+        div.left
+          span.title Projekti
+          each entry in entries
+            if user.name == entry.username
+              if(entry.archived != 1)
+                div.entry
+                  h3          
+                    =entry.naziv
+                  p
+                    span Opis projekta: 
+                    =entry.opis
+                  p.cijena           
+                    =entry.cijena + " kn"
+                  p.clanovi
+                    span Clanovi projekta:
+                    =entry.clanovi
+                  p
+                    span  korisnik:  
+                    =entry.username
+                  div.buttons  
+                    a.dodajclanove(href='/dodajclana?naziv='+entry.naziv)  Dodaj clana  
+                    a.arhiviraj(href='/arhiviraj?name='+entry.naziv)  Arhiviraj  
+        div.right 
+          span.title Arhivirano
+          each entry in entries
+            if user.name == entry.username
+              if(entry.archived == 1)
+                div.entry
+                  h3          
+                    =entry.naziv
+                  p
+                    span Opis projekta: 
+                    =entry.opis
+                  p.cijena           
+                    =entry.cijena + " kn"
+                  p.clanovi 
+                    =entry.clanovi
+                  p
+                    span  korisnik:  
+                    =entry.username
+                
+    include pager

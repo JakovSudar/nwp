@@ -1,0 +1,54 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to our test
+
+    // Wrapper
+    #wrapper
+
+        // USER INFO
+        #userInfo
+            h2 User Info
+            p
+                strong Name:
+                |  <span id='userInfoName'></span>
+                br
+                strong Age:
+                |  <span id='userInfoAge'></span>
+                br
+                strong Gender:
+                |  <span id='userInfoGender'></span>
+                br
+                strong Location:
+                |  <span id='userInfoLocation'></span>
+        // /USER INFO
+
+        // USER LIST
+        h2 Lista projekata
+        #userList
+            table
+                thead
+                    th UserName
+                    th Email
+                    th Delete?
+                tbody
+        // /USER LIST
+
+        // ADD USER
+        h2 Dodaj projekt
+        #addProjekt
+            fieldset
+                input#inputNazivProjekta(type='text', placeholder='Naziv projekta')
+                input#inputOpisProjekta(type='text', placeholder='Opis projekta')
+                br
+                input#inputCijenaProjekta(type='number', placeholder='Cijena projekta')
+                input#inputObavljeniPoslovi(type='text', placeholder='Obavljeni poslovi')
+                br
+                input#inputDatumPocetka(type='date', placeholder='Datum pocetka')
+                input#inputDatumZavrsetka(type='date', placeholder='Datum zavrsetka')
+                br
+                button#btnAddProject Dodaj projekt
+        // /ADD USER
+
+    // /WRAPPER

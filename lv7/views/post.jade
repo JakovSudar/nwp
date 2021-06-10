@@ -1,0 +1,26 @@
+doctype html
+html
+	head
+		meta(http-equiv="content-type", content="#{contentType}; charset=UTF-8")
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+	p Dodavanje novog projekta
+	include message
+	form(action='/post',method='post')
+		p
+			input(type='text',name='naziv',placeholder='Naziv projekta')
+		p
+			textarea(name='opis',placeholder='Opis projekta')
+		p
+			input(type='number',name='cijena',placeholder='Cijena projekta')
+		p
+			textarea(name='obavljeno',placeholder='Obavljeni poslovi')
+		p Datum pocetka:
+		p
+			input(type='date',name='pocetak',placeholder='Datum pocetka')
+		p Datum zavrsetka:
+		p
+			input(type='date',name='zavrsetak',placeholder='Datum zavrsetka')
+		p
+			input(type='submit',value='Objavi')
